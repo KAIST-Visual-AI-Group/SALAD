@@ -1,0 +1,12 @@
+# @package _global_
+#
+callbacks: null
+logger: null
+
+hydra:
+  job_logging:
+    root:
+      level: DEBUG
+
+trainer:
+  max_epochs: 1

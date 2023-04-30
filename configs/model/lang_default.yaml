@@ -1,0 +1,16 @@
+defaults:
+- default.yaml
+
+# dataset 
+dataset_kwargs:
+  data_path: ${data.latent_path}
+  repeat: 1
+  only_easy_context: false
+  global_normalization: ${model.global_normalization}
+
+# model
+text_encoder_freeze: false
+use_lstm: true
+classifier_free_guidance: true
+conditioning_dropout_prob: 0.2
+

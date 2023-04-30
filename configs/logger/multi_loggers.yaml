@@ -1,0 +1,15 @@
+wandb:
+  _target_: pytorch_lightning.loggers.wandb.WandbLogger
+  project: "spaghetti-ldm"
+  name: ${name}
+  save_dir: "."
+  entity: "geometry"
+
+tensorboard:
+  _target_: pytorch_lightning.loggers.tensorboard.TensorBoardLogger
+  save_dir: "tensorboard/"
+  name: null
+  version: ${name}
+  log_graph: false
+  default_hp_metric: true
+  prefix: ""

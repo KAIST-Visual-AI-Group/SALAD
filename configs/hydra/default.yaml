@@ -1,0 +1,6 @@
+run:
+  dir: ${paths.save_dir}
+
+sweep:
+  dir: ${paths.save_dir}
+  subdir: ${hydra.job.num}

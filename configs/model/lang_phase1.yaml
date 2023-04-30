@@ -1,0 +1,21 @@
+defaults:
+  - lang_default.yaml
+
+_target_: salad.models.language_phase1.LangPhase1Model
+network:
+  _target_: salad.model_components.network.CondDiffNetwork
+  input_dim: 16
+  residual: true
+  context_dim: 768
+  context_embedding_dim: 1024
+  embedding_dim: 512
+  encoder_use_time: false
+  encoder_type: pointwise
+  decoder_type: transformer_encoder
+  enc_num_layers: 2
+  dec_num_layers: 6
+  use_timestep_embedder: true
+  timestep_embedder_dim: 128
+
+dataset_kwargs:
+  data_keys: ["g_js_affine"]
