@@ -37,6 +37,7 @@ git clone https://github.com/63days/salad/
 cd salad
 conda env create -f environment.yml
 conda activate salad
+pip install -e .
 ```
 
 ## Data and Model Checkpoint
