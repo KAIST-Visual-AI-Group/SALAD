@@ -23,4 +23,3 @@ faster: true
 validation_step: 10
 no_run_validation: false
 spaghetti_tag: "chairs_large" # or airplanes, tables
-global_normalization: null

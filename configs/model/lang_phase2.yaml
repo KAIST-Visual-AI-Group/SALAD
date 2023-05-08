@@ -2,7 +2,6 @@ defaults:
   - lang_default.yaml
 
 _target_: salad.models.language_phase2.LangPhase2Model
-global_normalization: false
 network:
   _target_: salad.model_components.network.CondDiffNetwork
   input_dim: 512

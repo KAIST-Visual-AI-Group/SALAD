@@ -5,7 +5,7 @@ defaults:
   - data: spaghetti_chairs.yaml
   - model: phase1.yaml
   - callbacks: default.yaml
-  - logger: multi_loggers.yaml
+  - logger: tensorboard.yaml # multi_loggers.yaml
   - trainer: default.yaml
   - paths: default.yaml
   - hydra: default.yaml

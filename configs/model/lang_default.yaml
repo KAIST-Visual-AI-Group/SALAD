@@ -9,6 +9,7 @@ dataset_kwargs:
   global_normalization: ${model.global_normalization}
 
 # model
+global_normalization: false
 text_encoder_freeze: false
 use_lstm: true
 classifier_free_guidance: true

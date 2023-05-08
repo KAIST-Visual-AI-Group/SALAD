@@ -17,5 +17,7 @@ network:
   use_timestep_embedder: true
   timestep_embedder_dim: 128
 
+global_normalization: partial
+
 dataset_kwargs:
   data_keys: ["g_js_affine"]
