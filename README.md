@@ -17,13 +17,13 @@ This repository contains the official implementation of 🥗 **SALAD: Part-Level
 
 # UPDATES
 
-[x] Training code of SALAD with Chair class. (May 8th 2023)
-[x] Training code of *text-conditioned* SALAD. (May 8th 2023)
-[x] Demo of *text-guided* shape generation.
-[ ] Training code with other classes.
-[ ] Demo of part completion.
-[ ] Demo of part mixing and refinement.
-[ ] Demo of text-guided part completion.
+- [x] Training code of SALAD with Chair class. (May 8th 2023)
+- [x] Training code of *text-conditioned* SALAD. (May 8th 2023)
+- [x] Demo of *text-guided* shape generation.  (May 8th 2023)
+- [ ] Training code with other classes.
+- [ ] Demo of part completion.
+- [ ] Demo of part mixing and refinement.
+- [ ] Demo of text-guided part completion.
 
 
 # Get Started
