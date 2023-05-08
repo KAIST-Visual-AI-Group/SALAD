@@ -61,8 +61,8 @@ If you find our work useful, please consider citing:
 @article{koo2023salad,
     title={{SALAD}: Part-Level Latent Diffusion for 3D Shape Generation and Manipulation},
     author={Koo, Juil and Yoo, Seungwoo and Nguyen, Minh Hieu and Sung, Minhyuk},
-		year={2023},
-		journal={arXiv preprint arXiv:2303.122336},
+    year={2023},
+    journal={arXiv preprint arXiv:2303.12236},
 }
 ```
 
