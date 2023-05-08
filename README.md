@@ -41,8 +41,8 @@ pip install -e .
 ```
 
 ## Data and Model Checkpoint
-We provide ready-to-use data and pre-trained model checkpoints [here](https://kaistackr-my.sharepoint.com/:f:/g/personal/63days_kaist_ac_kr/ElMkKIvm33FPoJiuDYxGFNcBr53_Y8sMHIy196u9HDFrnQ?e=5LUp7b). 
-Unzip files and put them under the corresponding directories.
+We provide ready-to-use data and pre-trained SALAD and SPAGHETTI checkpoints [here](https://kaistackr-my.sharepoint.com/:f:/g/personal/63days_kaist_ac_kr/ElMkKIvm33FPoJiuDYxGFNcBr53_Y8sMHIy196u9HDFrnQ?e=5LUp7b). 
+Unzip files and put them under the corresponding directories except for SPAGHETTI checkpoints which should be under the `salad/spaghetti/assets/checkpoints/` directory.
 
 
 # Training
