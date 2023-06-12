@@ -34,7 +34,7 @@ For main requirements, we have tested the code with Python 3.9, CUDA 11.3 and Py
 
 ```
 git clone https://github.com/63days/salad/
-cd salad
+cd SALAD
 conda env create -f environment.yml
 conda activate salad
 pip install -e .
