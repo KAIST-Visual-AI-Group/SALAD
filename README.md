@@ -8,7 +8,7 @@
 [Juil Koo\*](https://63days.github.io/), [Seungwoo Yoo\*](https://dvelopery0115.github.io/), [Minh Hieu Nguyen\*](https://min-hieu.github.io/), [Minhyuk Sung](https://mhsung.github.io/) <br>
 \* denotes equal contribution.
 
-### 🎉 This paper got accepted at ICCV 2023!
+### 🎉 This paper got accepted to ICCV 2023!
 
 # Introduction
 This repository contains the official implementation of 🥗 **SALAD: Part-Level Latent Diffusion for 3D Shape Generation and Manipulation**.<br>
