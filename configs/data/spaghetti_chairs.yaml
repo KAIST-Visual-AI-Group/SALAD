@@ -1,0 +1,1 @@
+latent_path: spaghetti_chair_latents.hdf5 # file path from the salad.utils.paths.DATA_DIR directory.
