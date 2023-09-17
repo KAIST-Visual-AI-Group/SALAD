@@ -53,7 +53,6 @@ Unzip files and put them under the corresponding directories. SPAGHETTI checkpoi
 You can train models for unconditional generation with airplanes, chairs or tables.
 ```
 python train.py model={phase1, phase2} category={airplane, chair, table}
-
 ```
 
 ## Text-Guided Generation
@@ -64,13 +63,13 @@ python train.py model={lang_phase1, lang_phase2}
 ```
 
 # Demo
-## Generation of More Classes
+## Unconditional Shape Generation
 
-We also provide the demo code of generation of more classes, airplanes and tables at `notebooks/other_classes.ipynb`.
+We provide the demo code of unconditional generation with airplanes, chairs and tables at `notebooks/unconditional_generation_demo.ipynb`.
 
 ## Text-Guided Shape Generation
 
-We provide text-guided shape generation demo code at `notebooks/text_generation_demo.ipynb`.
+We also provide text-guided shape generation demo code at `notebooks/text_generation_demo.ipynb`.
 
 
 # Citation
