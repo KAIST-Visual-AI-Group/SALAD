@@ -3,7 +3,7 @@ defaults:
 
 # dataset 
 dataset_kwargs:
-  data_path: ${data.latent_path}
+  data_path: ${category.latent_path}
   repeat: 1
   only_easy_context: false
   global_normalization: ${model.global_normalization}

@@ -22,7 +22,7 @@ This repository contains the official implementation of 🥗 **SALAD: Part-Level
 - [x] Training code of SALAD with Chair class. (May 8th 2023)
 - [x] Training code of *text-conditioned* SALAD. (May 8th 2023)
 - [x] Demo of *text-guided* shape generation.  (May 8th 2023)
-- [ ] Training code with other classes.
+- [x] Code of generation of more classes. (Sep. 17th 2023)
 - [ ] Demo of part completion.
 - [ ] Demo of part mixing and refinement.
 - [ ] Demo of text-guided part completion.
@@ -44,18 +44,34 @@ pip install -e .
 
 ## Data and Model Checkpoint
 We provide ready-to-use data and pre-trained SALAD and SPAGHETTI checkpoints [here](https://kaistackr-my.sharepoint.com/:f:/g/personal/63days_kaist_ac_kr/ElMkKIvm33FPoJiuDYxGFNcBr53_Y8sMHIy196u9HDFrnQ?e=5LUp7b). 
-Unzip files and put them under the corresponding directories except for SPAGHETTI checkpoints which should be under the `salad/spaghetti/assets/checkpoints/` directory.
+Unzip files and put them under the corresponding directories. SPAGHETTI checkpoint directoriess should be under the `salad/salad/spaghetti/assets/checkpoints/` directory.
 
 
 # Training
+## Unconditional Generation
+
+You can train models for unconditional generation with airplanes, chairs or tables.
 ```
-python train.py model={phase1, phase2, lang_phase1, lang_phase2}
+python train.py model={phase1, phase2} category={airplane, chair, table}
+
+```
+
+## Text-Guided Generation
+
+For text-guided generation, train a first-phase model and a second-phase model:
+```
+python train.py model={lang_phase1, lang_phase2}
 ```
 
 # Demo
+## Generation of More Classes
+
+We also provide the demo code of generation of more classes, airplanes and tables at `notebooks/other_classes.ipynb`.
+
 ## Text-Guided Shape Generation
 
 We provide text-guided shape generation demo code at `notebooks/text_generation_demo.ipynb`.
+
 
 # Citation
 If you find our work useful, please consider citing:

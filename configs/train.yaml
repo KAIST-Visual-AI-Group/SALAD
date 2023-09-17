@@ -2,7 +2,7 @@
 
 defaults:
   - _self_
-  - data: spaghetti_chairs.yaml
+  - category: chair.yaml
   - model: phase1.yaml
   - callbacks: default.yaml
   - logger: tensorboard.yaml # multi_loggers.yaml

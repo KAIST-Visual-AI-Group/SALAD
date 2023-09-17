@@ -13,7 +13,7 @@ batch_size: ${batch_size}
 
 # dataset 
 dataset_kwargs:
-  data_path: ${data.latent_path}
+  data_path: ${category.latent_path}
   repeat: 3
   data_keys: ["s_j_affine"]
 
@@ -22,4 +22,4 @@ num_timesteps: *time_steps
 faster: true
 validation_step: 10
 no_run_validation: false
-spaghetti_tag: "chairs_large" # or airplanes, tables
+spaghetti_tag: ${category.spaghetti_tag}
