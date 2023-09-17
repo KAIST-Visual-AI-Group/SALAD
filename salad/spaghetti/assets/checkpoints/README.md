@@ -1,0 +1,1 @@
+Put SPAGHETTI checkpoint direcotires under this directory. For instance, the full path to `spaghetti_chairs_large` directory would be `salad/salad/spaghetti/assets/checkpoints/spaghetti_chairs_large`.
