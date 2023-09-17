@@ -1,1 +1,2 @@
 latent_path: spaghetti_table_latents.hdf5 # file path from the salad.utils.paths.DATA_DIR directory.
+spaghetti_tag: "tables"
