@@ -1,0 +1,23 @@
+# @package _global_
+defaults:
+  - override /model: ldm_big_za.yaml
+  - override /paths: default.yaml
+
+paths:
+  ####
+  # save_dir: ${paths.work_dir}/results/za/${name}/${now:%m%d_%H%M%S}
+  save_dir: ${paths.work_dir}/results/airplane-za/${name}/${now:%m%d_%H%M%S}
+  ####
+
+####
+data:
+  latent_path: "/home/dreamy1534/Projects/iccv2023-spaghetti/part_ldm/pvd/data/airplane_1775.hdf5"
+  spaghetti_tag: "airplanes"
+####
+
+logger:
+  wandb:
+    ####
+    # project: "spaghetti-za"
+    project: "sw_spaghetti-airplane-za"
+    ####

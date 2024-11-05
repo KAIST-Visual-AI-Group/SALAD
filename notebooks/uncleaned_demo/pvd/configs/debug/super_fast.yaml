@@ -1,0 +1,8 @@
+# @package _global_
+#
+defaults:
+ - override /logger: tensorboard.yaml
+ - override /callbacks: fast.yaml
+logger: null 
+model:
+  no_run_validation: true

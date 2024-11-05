@@ -1,0 +1,17 @@
+# @package _global_
+defaults:
+  - override /model: ldm_big_single_phase_language.yaml
+  - override /paths: default.yaml
+  - override /callbacks: default.yaml
+
+paths:
+  save_dir: ${paths.work_dir}/results/single_phase-lang/${name}/${now:%m%d_%H%M%S}
+
+logger:
+  wandb:
+    project: "spaghetti-single_phase-lang"
+
+callbacks:
+  model_checkpoint:
+    every_n_epochs: 5
+

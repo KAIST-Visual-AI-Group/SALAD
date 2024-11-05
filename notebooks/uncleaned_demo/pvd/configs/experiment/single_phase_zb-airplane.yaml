@@ -1,0 +1,18 @@
+# @package _global_
+defaults:
+  - override /model: ldm_big_single_phase_zb.yaml
+  - override /paths: default.yaml
+  - override /data: spaghetti_author_airplane.yaml
+
+paths:
+  save_dir: ${paths.work_dir}/results/single_phase-zb-airplane/${name}/${now:%m%d_%H%M%S}
+
+logger:
+  wandb:
+    project: "spaghetti-single-phase-zb-airplane"
+
+model:
+  spaghetti_tag: "airplanes"
+
+data:
+  latent_path: /home/juil/projects/3D_CRISPR/data/spaghetti_airplane_inversion/3236-03-02-112852-inversion_with_replacement_with_zb.hdf5

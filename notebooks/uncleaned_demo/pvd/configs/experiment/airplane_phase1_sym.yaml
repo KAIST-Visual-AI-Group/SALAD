@@ -1,0 +1,36 @@
+# @package _global_
+defaults:
+  - override /model: ldm_big_phase1.yaml
+  - override /paths: default.yaml
+
+
+#### < Seungwoo >
+# Change log directory
+paths:
+  # save_dir: ${paths.work_dir}/results/phase1/${name}/${now:%m%d_%H%M%S}
+  # save_dir: ${paths.work_dir}/results/phase1_sym/${name}/${now:%m%d_%H%M%S}
+  save_dir: ${paths.work_dir}/results/airplane-phase1_sym/${name}/${now:%m%d_%H%M%S}
+####
+
+
+#### < Seungwoo >
+# Override config in 'data/spaghetti_author' to load the proper data
+data:
+  latent_path: "/home/dreamy1534/Projects/iccv2023-spaghetti/part_ldm/pvd/data/airplane_1775_half.hdf5"
+  spaghetti_tag: "airplanes"
+####
+
+
+#### < Seungwoo >
+# Override configs in 'ldm_big_phase1' to use the symmetric model.
+model:
+  _target_: pvd.diffusion.phase1_sym.GaussianSALDM
+  eigen_value_clipping: true
+####
+
+logger:
+  wandb:
+    # < Seungwoo >
+    # Modified project name to prevent overwrite.
+    # project: "spaghetti-gaus"
+    project: "sw_spaghetti-gaus-sym"

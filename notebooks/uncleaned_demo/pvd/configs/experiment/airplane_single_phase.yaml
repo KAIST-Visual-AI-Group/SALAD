@@ -1,0 +1,36 @@
+# @package _global_
+defaults:
+  - override /model: ldm_big_phase1.yaml
+  - override /paths: default.yaml
+
+paths:
+  save_dir: ${paths.work_dir}/results/airplane-single_phase/${name}/${now:%m%d_%H%M%S}
+
+model:
+  _target_: pvd.diffusion.baselines.single_phase.SinglePhaseSALDM
+  network:
+    _target_: pvd.diffusion.baselines.single_phase.LatentSelfAttentionNetwork
+    input_dim: 528
+
+  #### < Seungwoo >
+  # Adjust the number of validation steps
+  validation_step: 5
+  ####
+
+  dataset_kwargs:
+    data_keys: ["concat"]
+
+data:
+  ####
+  # latent_path: "/home/dreamy1534/Projects/iccv2023-spaghetti/part_ldm/pvd/data/chair_6755_concat.hdf5"
+  latent_path: "/home/dreamy1534/Projects/iccv2023-spaghetti/part_ldm/pvd/data/airplane_1775_concat.hdf5"
+  spaghetti_tag: "airplanes"
+  ####
+
+logger:
+  wandb:
+    ####
+    # project: "spaghetti-single_phase"
+    project: "spaghetti-airplane-single_phase"
+    ####
+    

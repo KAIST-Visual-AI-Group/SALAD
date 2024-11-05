@@ -1,0 +1,36 @@
+_target_: pvd.diffusion.ldm.SpaghettiSALDM
+network: null 
+
+variance_schedule:
+  _target_: pvd.diffusion.common.VarianceSchedule
+  num_steps: &time_steps 1000
+  beta_1: 1e-4
+  beta_T: 0.05
+  mode: linear
+
+# optimizer
+lr: 1e-4
+batch_size: ${batch_size}
+
+global_normalization: partial
+# dataset 
+dataset_kwargs:
+  data_path: ${data.latent_path}
+  repeat: 1
+  data_keys: ["s_j_affine"]
+  lang_data_path: /home/juil/projects/3D_CRISPR/data/shapeglot/autosdf_spaghetti_game_data_v2.csv
+  only_correct: false
+  only_easy_context: false
+  max_dataset_size: 10000000
+  global_normalization: ${model.global_normalization}
+
+# model
+num_timesteps: *time_steps
+faster: true
+validation_step: 5
+no_run_validation: false
+spaghetti_tag: "chairs_large" # or airplanes
+text_encoder_freeze: true
+text_encoder_return_seq: false
+use_lstm: false
+use_partglot_data: false

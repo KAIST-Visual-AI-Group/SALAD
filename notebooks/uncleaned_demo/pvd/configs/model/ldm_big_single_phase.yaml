@@ -1,0 +1,26 @@
+defaults:
+- ldm_default.yaml
+
+_target_: pvd.diffusion.single_phase.SingleSALDM
+network:
+  _target_: pvd.diffusion.network.LatentSelfAttentionNetwork
+  input_dim: 528
+  embedding_dim: 512
+  num_heads: 4
+  use_timestep_embedder: true
+  timestep_embedder_dim: 128
+  enc_num_layers: 6
+  residual: true
+  scale_eigenvectors: &scale_vectors false
+
+validation_step: 10
+eigen_value_clipping: false
+eigen_value_clip_val: 1e-4
+use_scaled_eigenvectors: *scale_vectors
+global_normalization: false
+
+dataset_kwargs:
+  data_keys: ["s_j_affine", "g_js_affine"]
+  scale_eigenvectors: *scale_vectors
+  concat_data: true
+  global_normalization: ${model.global_normalization}

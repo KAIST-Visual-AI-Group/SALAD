@@ -1,0 +1,20 @@
+# @package _global_
+defaults:
+  - override /model: ldm_big_phase1_language.yaml
+  - override /paths: default.yaml
+  #- override /data: spaghetti_half_chair.yaml
+  - override /data: spaghetti_author.yaml
+  - override /callbacks: default.yaml
+
+paths:
+  save_dir: ${paths.work_dir}/results/phase1-lang/${name}/${now:%m%d_%H%M%S}
+
+logger:
+  wandb:
+    project: "spaghetti-phase1-lang"
+
+
+callbacks:
+  model_checkpoint:
+    every_n_epochs: 5
+

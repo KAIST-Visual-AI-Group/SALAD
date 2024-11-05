@@ -1,0 +1,25 @@
+_target_: pvd.embedding.model.CLIPEmbedder
+ext_embedder:
+  _target_: pvd.embedding.model.TFEmbedder
+  dim_in: 16
+  dim_h: 512
+  dim_out: 512
+  num_layers: 6
+  num_heads: 4
+
+int_embedder:
+  _target_: pvd.embedding.model.TFEmbedder
+  dim_in: 512
+  dim_h: 512
+  dim_out: 512
+  num_layers: 6
+  num_heads: 4
+
+temperature: 3
+lr: 1e-4
+batch_size: ${batch_size}
+
+dataset_kwargs:
+  data_path: ${data.latent_path}
+  repeat: 3
+  data_keys: ["s_j_affine", "g_js_affine"]

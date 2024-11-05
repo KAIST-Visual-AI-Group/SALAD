@@ -1,0 +1,23 @@
+# @package _global_
+defaults:
+  - override /model: ldm_big_phase2.yaml
+  - override /paths: default.yaml
+
+paths:
+  save_dir: ${paths.work_dir}/results/reverse_phase/${name}/${now:%m%d_%H%M%S}
+
+logger:
+  wandb:
+    project: "spaghetti-reverse_phase"
+
+
+model:
+  _target_: pvd.diffusion.reverse_model.ReverseConditionSALDM
+  network:
+    input_dim: 16
+    residual: true
+    context_dim: 512
+
+  dataset_kwargs:
+    data_keys: ["g_js_affine", "s_j_affine"]
+

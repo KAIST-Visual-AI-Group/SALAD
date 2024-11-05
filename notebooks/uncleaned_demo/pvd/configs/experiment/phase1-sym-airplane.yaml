@@ -1,0 +1,18 @@
+# @package _global_
+defaults:
+  - override /model: ldm_big_phase1.yaml
+  - override /paths: default.yaml
+  - override /data: spaghetti_half_airplane.yaml
+
+paths:
+  save_dir: ${paths.work_dir}/results/phase1-sym-airplane/${name}/${now:%m%d_%H%M%S}
+
+logger:
+  wandb:
+    project: "spaghetti-gaus-sym-airplane"
+
+model:
+  _target_: pvd.diffusion.phase1_sym.GaussianSymSALDM
+  use_symmetric: &sym true
+  spaghetti_tag: "airplanes"
+

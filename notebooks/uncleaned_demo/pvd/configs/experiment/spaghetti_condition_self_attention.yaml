@@ -1,0 +1,8 @@
+# @package _global_
+
+defaults:
+  - override /model: ldm_big_phase2.yaml
+  - override /paths: default.yaml
+
+paths:
+  save_dir: ${paths.work_dir}/results/spaghetti_condition_sa/${name}/${now:%m%d_%H%M%S}

@@ -1,0 +1,14 @@
+# @package _global_
+defaults:
+  - override /model: ldm_big_phase1_pos_enc.yaml
+  - override /paths: default.yaml
+  - override /data: spaghetti_author_airplane.yaml
+
+paths:
+  save_dir: ${paths.work_dir}/results/phase1-pos_enc-airplane/${name}/${now:%m%d_%H%M%S}
+
+logger:
+  wandb:
+    project: "spaghetti-gaus-pos_enc-airplane"
+model:
+  spaghetti_tag: "airplanes"

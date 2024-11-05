@@ -1,0 +1,2 @@
+work_dir: ${hydra:runtime.cwd}
+save_dir: ${work_dir}/results/${name}/${now:%m%d_%H%M%S}

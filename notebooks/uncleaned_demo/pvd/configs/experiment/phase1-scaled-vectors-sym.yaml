@@ -1,0 +1,23 @@
+# @package _global_
+defaults:
+  - override /model: ldm_big_phase1.yaml
+  - override /paths: default.yaml
+  - override /data: spaghetti_half_chair.yaml
+
+paths:
+  save_dir: ${paths.work_dir}/results/phase1-sym-scaled-vectors/${name}/${now:%m%d_%H%M%S}
+
+logger:
+  wandb:
+    project: "spaghetti-gaus-sym-scaled-vectors"
+
+model:
+  _target_: pvd.diffusion.phase1_sym.GaussianSymSALDM
+  use_symmetric: &sym true
+  network:
+    input_dim: 13
+    scale_eigenvectors: &scale_vectors true
+  dataset_kwargs:
+    scale_eigenvectors: *scale_vectors
+  use_scaled_eigenvectors: *scale_vectors
+

@@ -1,0 +1,16 @@
+# @package _global_
+defaults:
+  - override /model: ldm_big_phase2.yaml
+  - override /paths: default.yaml
+
+paths:
+  save_dir: ${paths.work_dir}/results/phase2/${name}/${now:%m%d_%H%M%S}
+
+logger:
+  wandb:
+    ####
+    # < Seungwoo >
+    # Modified project name to prevent overwrite.
+    # project: "spaghetti-phase2"
+    project: "sw_spaghetti-phase2"
+   ####

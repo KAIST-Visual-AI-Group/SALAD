@@ -1,0 +1,21 @@
+# @package _global_
+
+defaults:
+  - _self_
+  - data: spaghetti_author.yaml
+  - model: simclr.yaml
+  - callbacks: default.yaml
+  - logger: multi_loggers.yaml
+  - trainer: default.yaml
+  - paths: default.yaml
+  - hydra: default.yaml
+
+  - experiment: simclr-chair.yaml
+  - debug: null
+
+name: default
+seed: 63
+
+gpus: [0]
+epochs: 100
+batch_size: 1024

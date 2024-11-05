@@ -1,0 +1,11 @@
+# @package _global_
+defaults:
+  - override /model: ldm_big_single_phase.yaml
+  - override /paths: default.yaml
+
+paths:
+  save_dir: ${paths.work_dir}/results/single_phase/${name}/${now:%m%d_%H%M%S}
+
+logger:
+  wandb:
+    project: "spaghetti-single-phase"

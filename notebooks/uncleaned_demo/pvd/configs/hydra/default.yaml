@@ -1,0 +1,10 @@
+#defaults:
+  #- override hydra_logging: colorlog
+  #- override job_logging: colorlog
+
+run:
+  dir: ${paths.save_dir}
+
+sweep:
+  dir: ${paths.save_dir}
+  subdir: ${hydra.job.num}

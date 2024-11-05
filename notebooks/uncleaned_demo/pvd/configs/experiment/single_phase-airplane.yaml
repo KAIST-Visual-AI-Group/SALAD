@@ -1,0 +1,15 @@
+# @package _global_
+defaults:
+  - override /model: ldm_big_single_phase.yaml
+  - override /paths: default.yaml
+  - override /data: spaghetti_author_airplane.yaml
+
+paths:
+  save_dir: ${paths.work_dir}/results/single_phase-airplane/${name}/${now:%m%d_%H%M%S}
+
+logger:
+  wandb:
+    project: "spaghetti-single-phase-airplane"
+
+model:
+  spaghetti_tag: "airplanes"

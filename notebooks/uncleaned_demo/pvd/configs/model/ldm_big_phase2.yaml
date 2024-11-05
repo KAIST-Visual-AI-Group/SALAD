@@ -1,0 +1,39 @@
+defaults:
+  - ldm_default.yaml
+
+_target_: pvd.diffusion.ldm.SpaghettiConditionSALDM
+network:
+  _target_: pvd.diffusion.network.LatentConditionSelfAttentionNetwork
+  input_dim: 512
+  residual: true
+  context_dim: 16
+  context_embedding_dim: 512
+  embedding_dim: 512
+  encoder_use_time: false
+  encoder_type: transformer
+  decoder_type: transformer_encoder
+  enc_num_layers: 6
+  dec_num_layers: 6
+  use_timestep_embedder: true
+  timestep_embedder_dim: 128
+  scale_eigenvectors: &scale_vectors false
+
+classifier_free_guidance: false
+conditioning_dropout_prob: 0.0
+conditioning_dropout_level: shape
+
+augment_condition: false
+phase1_ckpt_path: null
+augment_timestep: 100
+mu_noise_scale: 1
+eigenvectors_noise_scale: 1
+pi_noise_scale: 1
+eigenvalues_noise_scale: 1
+
+use_scaled_eigenvectors: *scale_vectors
+sj_global_normalization: false
+
+dataset_kwargs:
+  data_keys: ["s_j_affine", "g_js_affine"]
+  scale_eigenvectors: *scale_vectors
+  sj_global_normalization: ${model.sj_global_normalization}

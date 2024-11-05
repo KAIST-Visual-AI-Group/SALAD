@@ -1,0 +1,26 @@
+_target_: pvd.diffusion.ldm.SpaghettiSALDM
+network: null 
+
+variance_schedule:
+  _target_: pvd.diffusion.common.VarianceSchedule
+  num_steps: &time_steps 1000
+  beta_1: 1e-4
+  beta_T: 0.05
+  mode: linear
+
+# optimizer
+lr: 1e-4
+batch_size: ${batch_size}
+
+# dataset 
+dataset_kwargs:
+  data_path: ${data.latent_path}
+  repeat: 3
+  data_keys: ["s_j_affine"]
+
+# model
+num_timesteps: *time_steps
+faster: true
+validation_step: 10
+no_run_validation: false
+spaghetti_tag: "chairs_large" # or airplanes

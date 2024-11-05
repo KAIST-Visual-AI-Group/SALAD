@@ -1,0 +1,18 @@
+# @package _global_
+defaults:
+  - override /model: simclr.yaml
+  - override /paths: default.yaml
+  - override /data: spaghetti_author.yaml
+
+paths:
+  save_dir: ${paths.work_dir}/results/simclr-chair/${name}/${now:%m%d_%H%M%S}
+
+logger:
+  wandb:
+    project: "simclr-chair"
+
+callbacks:
+  model_checkpoint:
+    every_n_epochs: null
+    save_top_k: 1
+    monitor: "val/loss"

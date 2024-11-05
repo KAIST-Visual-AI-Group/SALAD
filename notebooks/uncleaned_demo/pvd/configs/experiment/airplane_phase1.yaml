@@ -1,0 +1,28 @@
+# @package _global_
+defaults:
+  - override /model: ldm_big_phase1.yaml
+  - override /paths: default.yaml
+
+paths:
+  ####
+  # save_dir: ${paths.work_dir}/results/phase1/${name}/${now:%m%d_%H%M%S}
+  save_dir: ${paths.work_dir}/results/airplane-phase1/${name}/${now:%m%d_%H%M%S}
+  ####
+
+####
+data:
+  latent_path: "/home/dreamy1534/Projects/iccv2023-spaghetti/part_ldm/pvd/data/airplane_1775.hdf5"
+  spaghetti_tag: "airplanes"
+####
+
+logger:
+  wandb:
+    ####
+    # < Seungwoo >
+    # Modified project name to prevent overwrite.
+    # project: "spaghetti-gaus"
+    #   < Seungwoo >
+    #   Modified project name for airplane data
+    # project: "sw_spaghetti-gaus"
+    project: "sw_spaghetti-airplane-gaus"
+    ####

@@ -1,0 +1,27 @@
+# @package _global_
+defaults:
+  - override /model: ldm_big_phase2.yaml
+  - override /paths: default.yaml
+
+paths:
+  save_dir: ${paths.work_dir}/results/phase2-scaled-vectors/${name}/${now:%m%d_%H%M%S}
+
+logger:
+  wandb:
+    project: "spaghetti-phase2-scaled-vectors"
+
+model:
+  condition_var_sched:
+    num_steps: 2000
+    beta_1: 1e-6
+    beta_T: 0.02
+    max_cond_t: 4
+
+  network:
+    context_dim: 13
+    scale_eigenvectors: &scale_vectors true
+  dataset_kwargs:
+    scale_eigenvectors: *scale_vectors
+
+  use_scaled_eigenvectors: *scale_vectors
+  augment_condition: true
