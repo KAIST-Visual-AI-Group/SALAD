@@ -43,7 +43,7 @@ pip install -e .
 ```
 
 ## Data and Model Checkpoint
-We provide ready-to-use data and pre-trained SALAD and SPAGHETTI checkpoints [here](https://1drv.ms/f/s!AtxL_EOxFeYMk0s3rDbhJORZ6ITD?e=VA09ei). 
+We provide ready-to-use data and pre-trained SALAD and SPAGHETTI checkpoints [here]([https://1drv.ms/f/s!AtxL_EOxFeYMk0s3rDbhJORZ6ITD?e=VA09ei](http://onedrive.live.com/?cid=0ce615b143fc4bdc&id=0CE615B143FC4BDC%212507&resid=0CE615B143FC4BDC%212507&ithint=folder&migratedtospo=true&redeem=aHR0cHM6Ly8xZHJ2Lm1zL2YvYy8wY2U2MTViMTQzZmM0YmRjL1F0eExfRU94RmVZZ2dBekxDUUFBQUFBQU42dzI0U1RrV2VpRXd3&v=validatepermission)). 
 Unzip files and put them under the corresponding directories. SPAGHETTI checkpoint directoriess should be under the `SALAD/salad/spaghetti/assets/checkpoints/` directory.
 
 
